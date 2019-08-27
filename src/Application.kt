@@ -14,6 +14,8 @@ import io.ktor.jackson.jackson
 import io.ktor.response.respondText
 import io.ktor.routing.get
 import io.ktor.routing.routing
+import io.ktor.server.engine.embeddedServer
+import io.ktor.server.netty.Netty
 import org.koin.ktor.ext.Koin
 import org.koin.ktor.ext.inject
 
@@ -44,7 +46,10 @@ fun Application.routes() {
     }
 }
 
-fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
+fun main() {
+    val port = Integer.valueOf(System.getenv("PORT"))
+    embeddedServer(factory = Netty, port = port) {}.start()
+}
 
 
 
