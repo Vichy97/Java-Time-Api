@@ -27,6 +27,6 @@ val dbModule = module {
     }
 
     single {
-        KMongo.createClient(System.getenv("MONGODB_URI"))
+        KMongo.createClient(System.getenv("MONGODB_URI").toString())
     }
 }
