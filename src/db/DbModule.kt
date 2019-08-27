@@ -23,7 +23,7 @@ val dbModule = module {
     }
 
     single {
-        get<MongoClient>().getDatabase(databaseName)
+        get<MongoClient>().getDatabase("heroku_cb6tk21z")
     }
 
     single {
