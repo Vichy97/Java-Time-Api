@@ -10,7 +10,7 @@ import org.litote.kmongo.*
 
 val dbModule = module {
 
-    val databaseName= "local"
+    val databaseName= "heroku_cb6tk21z"
     val factCollection = "facts"
     val suggestionCollection = "suggestions"
 
@@ -23,7 +23,7 @@ val dbModule = module {
     }
 
     single {
-        get<MongoClient>().getDatabase("heroku_cb6tk21z")
+        get<MongoClient>().getDatabase(databaseName)
     }
 
     single {
