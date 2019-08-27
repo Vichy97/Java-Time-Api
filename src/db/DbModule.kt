@@ -1,6 +1,8 @@
 package com.vincent.javatime.db
 
 import com.mongodb.MongoClient
+import com.mongodb.MongoClientURI
+import com.mongodb.MongoURI
 import com.mongodb.client.MongoDatabase
 import com.vincent.javatime.models.Fact
 import com.vincent.javatime.models.Suggestion
@@ -27,6 +29,10 @@ val dbModule = module {
     }
 
     single {
-        KMongo.createClient(System.getenv("MONGODB_URI").toString())
+        KMongo.createClient(get<MongoClientURI>())
+    }
+
+    single {
+        MongoClientURI(System.getenv("MONGODB_URI"))
     }
 }
