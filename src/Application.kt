@@ -47,6 +47,7 @@ fun Application.routes() {
 }
 
 fun main() {
+    System.setProperty("java.net.preferIPv4Stack" , "true");
     val port = Integer.valueOf(System.getenv("PORT"))
     embeddedServer(factory = Netty, port = port) {}.start()
 }
