@@ -46,7 +46,6 @@ compileTestKotlin {
     kotlinOptions.jvmTarget = "1.8"
 }
 
-mainClassName = 'com.vincent.javatime.ApplicationKt'
 task stage {
     dependsOn installDist
 }
