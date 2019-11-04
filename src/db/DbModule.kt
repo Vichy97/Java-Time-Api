@@ -17,7 +17,7 @@ private const val FACTS_COLLECTION = "facts"
 private const val SUGGESTIONS_COLLECTION = "suggestions"
 
 public const val FACTS = "facts"
-public const val SUGGESTIONS = "facts"
+public const val SUGGESTIONS = "suggestions"
 
 val dbModule = module {
 

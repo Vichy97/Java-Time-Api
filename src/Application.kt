@@ -6,6 +6,7 @@ import com.vincent.javatime.repository.SuggestionRepository
 import com.vincent.javatime.repository.repositoryModule
 import com.vincent.javatime.routes.factsRoute
 import com.vincent.javatime.routes.suggestionsRoute
+
 import io.ktor.application.*
 import io.ktor.features.CallLogging
 import io.ktor.features.ContentNegotiation
@@ -16,6 +17,7 @@ import io.ktor.routing.get
 import io.ktor.routing.routing
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
+
 import org.koin.ktor.ext.Koin
 import org.koin.ktor.ext.inject
 
