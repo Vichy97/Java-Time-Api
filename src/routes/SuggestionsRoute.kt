@@ -3,6 +3,7 @@ package com.vincent.javatime.routes
 import com.vincent.javatime.models.Suggestion
 import com.vincent.javatime.repository.SuggestionRepository
 import io.ktor.application.call
+import io.ktor.http.HttpStatusCode
 import io.ktor.request.receive
 import io.ktor.response.respond
 import io.ktor.routing.Routing
@@ -18,5 +19,6 @@ fun Routing.suggestionsRoute(suggestionRepository: SuggestionRepository) {
     post("/suggestions/") {
         val suggestion = call.receive(Suggestion::class)
         suggestionRepository.addSuggestion(suggestion)
+        call.respond(HttpStatusCode.OK)
     }
 }
