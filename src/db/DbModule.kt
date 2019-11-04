@@ -8,6 +8,7 @@ import com.mongodb.client.MongoDatabase
 
 import com.vincent.javatime.models.Fact
 import com.vincent.javatime.models.Suggestion
+import org.koin.core.qualifier.named
 
 import org.koin.dsl.module
 import org.litote.kmongo.*
@@ -15,13 +16,16 @@ import org.litote.kmongo.*
 private const val FACTS_COLLECTION = "facts"
 private const val SUGGESTIONS_COLLECTION = "suggestions"
 
+public const val FACTS = "facts"
+public const val SUGGESTIONS = "facts"
+
 val dbModule = module {
 
-    single<MongoCollection<Suggestion>> {
+    single<MongoCollection<Suggestion>>(named(SUGGESTIONS)) {
         get<MongoDatabase>().getCollection<Suggestion>(SUGGESTIONS_COLLECTION)
     }
 
-    single<MongoCollection<Fact>> {
+    single<MongoCollection<Fact>>(named(FACTS)) {
         get<MongoDatabase>().getCollection<Fact>(FACTS_COLLECTION)
     }
 
